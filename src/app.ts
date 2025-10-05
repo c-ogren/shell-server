@@ -1,10 +1,10 @@
 import Fastify from "fastify";
-import testRoutes from "./routes/test.route";
+import { testRoutes } from "./routes/testRoute";
 
-export function buildApp() {
+export const buildApp = () => {
   const fastify = Fastify({ logger: true });
 
-  fastify.register(testRoutes, { prefix: "/test" });
+  fastify.register(testRoutes, { prefix: "/foo" });
 
   return fastify;
-}
+};
